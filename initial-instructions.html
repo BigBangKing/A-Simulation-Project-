@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Training Sessions: A Virtual Reality Experience</title>
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .session-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .session-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .session-card h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .session-card h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #00bfff;
+        }
+        .session-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .session-card li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .session-card li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #32cd32;
+        }
+        .background-icon {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 150px;
+            opacity: 0.1;
+            color: #ffffff;
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .session-card {
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+        }
+        .session-card:nth-child(1) { animation-delay: 0.2s; }
+        .session-card:nth-child(2) { animation-delay: 0.4s; }
+        .session-card:nth-child(3) { animation-delay: 0.6s; }
+        .session-card:nth-child(4) { animation-delay: 0.8s; }
+        /* Interactive Element: Toggle Details */
+        .toggle-btn {
+            background: #ffd700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .toggle-btn:hover {
+            background: #ffcc00;
+        }
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="animate__animated animate__fadeInDown">Virtual Driving Training Sessions</h1>
+        <p class="animate__animated animate__fadeInUp">An Immersive University Project for Safe Driving Mastery</p>
+    </header>
+    <div class="container">
+        <!-- Session 1 -->
+        <div class="session-card">
+            <i class="fas fa-car background-icon"></i>
+            <h2><i class="fas fa-play-circle"></i> Session 1: Controlled Starts and Stops</h2>
+            <h3>Objectives:</h3>
+            <ul>
+                <li>Practice controlled starts and stops.</li>
+                <li>Proper stopping at stop signs and pedestrian crossings.</li>
+                <li>Smooth acceleration and deceleration.</li>
+            </ul>
+        </div>
+
+        <!-- Session 2 -->
+        <div class="session-card">
+            <i class="fas fa-sync-alt background-icon"></i>
+            <h2><i class="fas fa-circle-notch"></i> Session 2: Roundabout Navigation</h2>
+            <h3>Objectives:</h3>
+            <ul>
+                <li>Understand who has the right of way in roundabouts.</li>
+                <li>Use indicators (turn signals) correctly when entering and exiting.</li>
+                <li>Practice safe merging and exiting.</li>
+            </ul>
+            <h3>Training Environment:</h3>
+            <ul>
+                <li>Simple roundabout layout with signs.</li>
+                <li>Optional traffic flow (cars or ghost vehicles).</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleContent('session2')">Show More Details</button>
+            <div id="session2" class="hidden-content">
+                <p>Explore interactive simulations with real-time feedback to master roundabout maneuvers.</p>
+            </div>
+        </div>
+
+        <!-- Session 3 -->
+        <div class="session-card">
+            <i class="fas fa-traffic-light background-icon"></i>
+            <h2><i class="fas fa-arrows-alt-h"></i> Session 3: Right of Way at Intersections</h2>
+            <h3>Objectives:</h3>
+            <ul>
+                <li>Learn to determine who has the priority at intersections.</li>
+                <li>Handle four-way intersections with varying signs.</li>
+                <li>React to oncoming traffic from multiple directions.</li>
+            </ul>
+            <h3>Training Environment:</h3>
+            <ul>
+                <li>Multiple road junctions with Stop, Yield, and No Entry signs.</li>
+                <li>Virtual instructor provides real-time feedback.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleContent('session3')">Show More Details</button>
+            <div id="session3" class="hidden-content">
+                <p>Dive into complex scenarios with AI-driven traffic for unparalleled learning.</p>
+            </div>
+        </div>
+
+        <!-- Session 4 -->
+        <div class="session-card">
+            <i class="fas fa-walking background-icon"></i>
+            <h2><i class="fas fa-male"></i> Session 4: Pedestrian Crossing Awareness</h2>
+            <h3>Objectives:</h3>
+            <ul>
+                <li>Stop correctly before pedestrian crosswalks.</li>
+                <li>Recognize pedestrian behavior and anticipate crossing.</li>
+                <li>Handle crossings with or without traffic lights.</li>
+            </ul>
+            <h3>Training Environment:</h3>
+            <ul>
+                <li>Urban street with multiple pedestrian crossings.</li>
+                <li>NPC pedestrians with basic walking animations or triggers.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleContent('session4')">Show More Details</button>
+            <div id="session4" class="hidden-content">
+                <p>Engage with lifelike pedestrian interactions to enhance urban driving skills.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
